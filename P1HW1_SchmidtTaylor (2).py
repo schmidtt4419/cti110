@@ -4,6 +4,8 @@
 #Write code that collects information from user, processes information collected and display results to user.
 
 #Calculating exponents
+print("-----Calculating Exponents")
+print("")
 
 #Ask the user for the base value
 base = int(input("Enter an integer as the base value: "))
@@ -24,6 +26,8 @@ print(base,"Raised to the power of", exponent, "is", result, "!!")
 print("")
 
 #Addition and Subtraction
+print("-----Addition and Subtraction")
+prit("")
 
 #Ask user for starting integer
 num_1= int(input("Enter a starting integer: "))
