@@ -4,7 +4,6 @@
 # Assignment tests student's knowledge of how to write code that uses a dictionary to store user input and displays output to the user
 
 # Create the dictionary with car models as keys and miles per gallon as values
-
 vehicle_mpg = {
     "Camaro": 18.21,
     "Prius": 52.36,
@@ -27,7 +26,7 @@ print("")
 
 # Give the user the MPG for the vehicle they choose
 mpg = vehicle_mpg[vehicle]
-print("The", vehicle, "gets", mpg, "MPG.")
+print(f"The {vehicle} gets {mpg} MPG.")
 
 print("")
 
@@ -43,4 +42,4 @@ gallons_needed = miles / mpg
 gallons_needed = round(gallons_needed,2)
 
 # Display the result of how many gallons of gas are needed (f-string/ formatted string)
-print(f"{gallons_needed} gallon(s) of gas are needed to drive the {vehicle} miles {miles}.")
+print(f"{gallons_needed} gallon(s) of gas are needed to drive the {vehicle} {miles} miles.")
