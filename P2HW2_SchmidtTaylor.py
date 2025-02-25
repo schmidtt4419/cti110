@@ -7,12 +7,15 @@
 module_grades = []
 
 #Ask the user to input grades for each module (W3 Schools Loop Lists)
-#i represets index...
+#i represets index... has to be 1-7 because python assigns the first input as 0...
+#append modifies the original list directly by adding the new element as its last item... 
+
 for i in range(1, 7): 
     grade = float(input(f"Enter the grade for Module {i}: "))
     module_grades.append(grade)
 
 #Calculations to find min, max, sum, and average
+
 #Find the lowest grade
 lowest_grade = min(module_grades)  
 
@@ -23,12 +26,14 @@ highest_grade = max(module_grades)
 sum_of_grades = sum(module_grades)
 
 #Find the average of all grades
-#len() is a built-in function in Python that returns the number of items in an object.. AKA 6 for this assignment becue there are 6 modules
-
+#len() is a built-in function in Python that returns the number of items in an object.. AKA 6 for this assignment because there are 6 modules
 average_grade = sum_of_grades / len(module_grades)
 
+#Blank space
+print()
+
 #Display the results
-print("\n-----------Results------------")
+print("-----------Results------------")
 print(f"Lowest grade: {lowest_grade}")
 print(f"Highest grade: {highest_grade}")
 print(f"Sum of grades: {sum_of_grades}")
