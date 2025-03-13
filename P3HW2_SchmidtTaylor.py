@@ -60,6 +60,6 @@ gross_pay = regular_pay + overtime_pay
 print("-" * 40)
 print(f"Employee name: {employee_name}")
 print("-" * 40)
-print(f"{'Hours Worked':<15}{'Pay Rate':<10}{'OverTime':<10}{'OverTime Pay':<15}{'RegHour Pay':<15}{'Gross Pay':<15}")
+print(f"{'Hours Worked':<15}{'Pay Rate':<15}{'OverTime':<15}{'OverTime Pay':<15}{'RegHour Pay':<15}{'Gross Pay':<15}")
 print("-" * 90)
-print(f"{hours_worked:<15.1f}{pay_rate:<10.2f}{overtime_hours:<10.1f}{overtime_pay:<15.2f}{regular_pay:<15.2f}{gross_pay:<15.2f}")
+print(f"{hours_worked:<15.1f}${pay_rate:<15.2f}{overtime_hours:<15.1f}${overtime_pay:<15.2f}${regular_pay:<15.2f}${gross_pay:<15.2f}")
