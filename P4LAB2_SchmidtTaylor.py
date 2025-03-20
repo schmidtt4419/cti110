@@ -7,7 +7,7 @@
 run_again = "yes"
 
 # While loop to control the main logic
-while run_again != "no":
+while run_again.lower() != "no":
     integer = int(input("Enter an integer: "))
     if integer >=0: 
         for i in range (1,13):
