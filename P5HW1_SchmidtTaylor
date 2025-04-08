@@ -1,0 +1,185 @@
+#Taylor Schmidt
+#04/08/2025
+#P5HW
+#Create a game!
+
+import random  # Required library for random events
+
+# Function: createSnoopy
+# This function initializes Snoopy's character and asks the player to pack supplies.
+# Parameters: None
+# It doesn't accept any parameters, but it collects user input for the inventory.
+# The function sets up the character with a name, health points, a rowing ability, and an inventory.
+
+def createSnoopy(): 
+    name = "Snoopy"
+    health_points = 100  # Initial health
+    row_ability = 0  # Rowing ability (not used in this version but can be extended)
+    inventory = []  # An empty inventory list to start
+
+    # Asking the user if Snoopy should pack any supplies
+    add_item = input(f"Should {name} pack any supplies to begin his River Adventure? (Yes or No): ")
+    
+    # Loop to add items to the inventory
+    while add_item.lower() == "yes":
+        item = input(f"Enter an item {name} should pack in his backpack: ")
+        inventory.append(item)  # Add item to the inventory list
+        add_item = input(f"Should he bring any other items? (Yes or No): ")
+
+    print("\n🎒 You successfully packed Snoopy's backpack!")
+    print("Backpack contents:", inventory)
+
+    # Creating a character dictionary with Snoopy's details
+    character = {
+        "name": name,
+        "inventory": inventory,
+        "health_points": health_points,
+        "row_ability": row_ability
+    }
+    return character  # Return the character dictionary
+
+# Function: randomEvent
+# This function generates a random event that affects Snoopy's health or inventory.
+# Parameters: character (dict) - The player's character containing health points and inventory.
+# It selects a random event from a list and applies its effect to Snoopy's health or inventory.
+
+def randomEvent(character):
+    events = [
+        ("Snoopy falls into a rapid current! (-30 HP)", -30),  # Event with health decrease
+        ("Snoopy gets stuck in thorns. (-25 HP)", -25),
+        ("A swarm of mosquitoes attacks! (-20 HP)", -20),
+        ("He drops his snack into the river. (-10 HP)", -10),
+        ("He finds a shady spot and takes a short rest. (+5 HP)", +5),  # Event with health increase
+        ("A Woodstock shares a health herb. (+10 HP)", +10),
+        ("A helpful otter gives Snoopy a paddle!", "paddle"),  # Event with inventory change
+        ("He finds a shortcut and avoids danger! (No change)", 0),  # No effect event
+    ]
+
+    # Randomly selecting an event from the list
+    event = random.choice(events)
+    description, effect = event
+    print(f"\n🌀 Event: {description}")  # Print event description
+
+    # Handling health changes
+    if isinstance(effect, int):  # If the effect is an integer (health change)
+        character["health_points"] += effect
+        if character["health_points"] > 100:  # Ensure health doesn't exceed 100
+            character["health_points"] = 100
+        print(f"🩺 Snoopy's health is now {character['health_points']}")
+    
+    # Handling inventory changes
+    elif isinstance(effect, str):  # If the effect is a string (item for inventory)
+        if effect not in character["inventory"]:
+            character["inventory"].append(effect)  # Add item to the inventory
+            print(f"🎁 Snoopy adds {effect} to his backpack!")
+
+    return character  # Return updated character
+
+# Function: makeChoice
+# This function prompts the user to choose which direction Snoopy should go.
+# Parameters: None
+# It asks the user to input either 'left' or 'right' for Snoopy's direction and validates the input.
+
+def makeChoice():
+    while True:
+        choice = input("Which direction should Snoopy go? (left/right): ").lower()
+        if choice in ["left", "right"]:
+            return choice  # Return the valid choice
+        else:
+            print("❌ Invalid input. Please type 'left' or 'right'.")
+
+# Function: riverAdventure
+# This function simulates Snoopy's journey down the river, encountering random events.
+# Parameters: character (dict) - The player's character containing health and inventory.
+# It manages the main loop of the game, handling player choices and random events until Snoopy's health runs out.
+
+def riverAdventure(character):
+    print("\n🌊 Snoopy begins paddling down the river...")
+
+    # Main game loop while Snoopy still has health points
+    while character["health_points"] > 0:
+        direction = makeChoice()  # Get the player's choice for direction
+        print(f"\n➡️ Snoopy turns {direction} down a winding part of the river...")
+        character = randomEvent(character)  # Apply a random event
+
+        # Display the current status of the character
+        print(f"\n📊 Current Status: Health = {character['health_points']}, Inventory = {character['inventory']}")
+        print("-" * 40)
+
+        # Check if Snoopy's health is 0 or below, end the game
+        if character["health_points"] <= 0:
+            print("\n💀 Snoopy is too exhausted to continue his adventure.")
+            print("🪦 GAME OVER 🛶")
+            break
+
+    return character  # Return character after the adventure ends
+
+# Main Function: main
+# The main function runs the entire game, including character creation and the river adventure.
+# Parameters: None
+# It calls the createSnoopy() function to set up the character, then starts the river adventure with riverAdventure().
+
+def main():
+    print("\n🛶 Welcome to Snoopy's River Adventure! 🗺️\n")
+    character = createSnoopy()  # Create the character
+    riverAdventure(character)  # Start the river adventure
+    print("\n🏁 Thanks for joining Snoopy on his journey!\n")  # End message
+
+# Starting the program
+if __name__ == "__main__":  # Ensure the game runs only if this file is executed directly
+    main()
+
+
+print('')
+print('')
+print('')
+print('')
+print('')
+print('')
+print('                          XXXX')
+print('                         X    XX')
+print('                        X  ***  X                XXXXX')
+print('                       X  *****  X            XXX     XX')
+print('                    XXXX ******* XXX      XXXX          XX')
+print('                  XX   X ******  XXXXXXXXX                XX XXX')
+print('                XX      X ****  X                           X** X')
+print('               X        XX    XX     X                      X***X')
+print('              X         //XXXX       X                      XXXX')
+print('             X         //   X                             XX')
+print('            X         //    X          XXXXXXXXXXXXXXXXXX/')
+print('            X     XXX//    X          X')
+print('            X    X   X     X         X')
+print('            X    X    X    X        X')
+print('             X   X    X    X        X                    XX')
+print('             X    X   X    X        X                 XXX  XX')
+print('              X    XXX      X        X               X  X X  X')
+print('              X             X         X              XX X  XXXX')
+print('               X             X         XXXXXXXX!     XX   XX  X')
+print('                XX            XX              X     X    X  XX')
+print('                  XX            XXXX   XXXXXX/     X     XXXX')
+print('                    XXX             XX***         X     X')
+print('                       XXXXXXXXXXXXX *   *       X     X')
+print('                                    *---* X     X     X')
+print('                                   *-* *   XXX X     X')
+print('                                   *- *       XXX   X')
+print('                                  *- *X          XXX')
+print('                                  *- *X  X          XXX')
+print('                                 *- *X    X            XX')
+print('                                 *- *XX    X             X')
+print('                                *  *X* X    X             X')
+print('                                *  *X * X    X             X')
+print('                               *  * X**  X   XXXX          X')
+print('                               *  * X**  XX     X          X')
+print('                              *  ** X** X     XX          X')
+print('                              *  **  X*  XXX   X         X')
+print('                             *  **    XX   XXXX       XXX')
+print('                            *  * *      XXXX      X     X')
+print('                           *   * *          X     X     X')
+print('             =======*******   * *           X     X      XXXXXXXX!')
+print('                    *         * *      /XXXXX      XXXXXXXX!      )')
+print('               =====**********  *     X                     )  !  )')
+print('                 ====*         *     X               !  !   )XXXXX')
+print('            =========**********       XXXXXXXXXXXXXXXXXXXXXX')
+print('')
+print('')
+print('')
