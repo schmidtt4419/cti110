@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Found a Cat? - Junie’s World</title>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background-color: #ffe6f0;
+      background-repeat: repeat;
+      background-size: 150px;
+      color: #4d004d;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #ffb6c1;
+      color: #4d004d;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav a {
+      color: #4d004d;
+      text-decoration: none;
+      padding: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #f0a6ca;
+    }
+
+    form {
+      background-color: #ffe6f0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #d88ca6;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #cc6699;
+    }
+
+    button {
+      background-color: #ff99cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ff66b2;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Found a Cat?</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="foundacat.html">Found a Cat?</a> |
+      <a href="caringforcats.html">Caring for Cats</a> |
+	  <a href="about.html">About</a> |
+	  <a href="Junie.html">All Things Junie</a>
+
+    </nav>
+  </header>
+
+  <section>
+    <h2>🐱 What to Do</h2>
+    <p>If you find a stray or injured cat, here are the steps you should follow:</p>
+    <ul>
+      <li>Approach cautiously and check for injuries.</li>
+      <li>Look for ID tags or a microchip at a vet.</li>
+      <li>Contact a local shelter or rescue group.</li>
+      <li>Provide temporary food and water if safe to do so.</li>
+    </ul>
+
+    <h3>📋 Report a Found Cat</h3>
+    <form>
+      <label for="name">Name (optional):</label>
+      <input type="text" id="name" name="name">
+
+      <label for="contact">Contact Info (email or phone):</label>
+      <input type="text" id="contact" name="contact">
+
+      <label for="description">Cat Description:</label>
+      <textarea id="description" name="description"></textarea>
+
+      <label for="location">Location Found:</label>
+      <input type="text" id="location" name="location">
+
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Created by Taylor Schmidt | © 2025 Junie’s World</p>
+  </footer>
+</body>
+
+</html>
